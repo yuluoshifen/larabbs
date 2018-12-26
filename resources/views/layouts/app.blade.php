@@ -14,18 +14,19 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <div id="app" class="{{ route_class() }}-page"> <!--自定义辅助函数，将当前请求的路由名称转换为CSS类名，使开发者可针对某页面做样式定制-->
+<div id="app" class="{{ route_class() }}-page"> <!--自定义辅助函数，将当前请求的路由名称转换为CSS类名，使开发者可针对某页面做样式定制-->
 
-        @include('layouts._header')
+    @include('layouts._header')
 
-        <div class="container">
-            @yield('content')
-        </div>
-
-        @include('layouts._footer')
+    <div class="container">
+        @include('layouts._message')
+        @yield('content')
     </div>
 
-    <!--Script-->
-    <script src="{{ asset('js/app.js') }}"></script>
+    @include('layouts._footer')
+</div>
+
+<!--Script-->
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
