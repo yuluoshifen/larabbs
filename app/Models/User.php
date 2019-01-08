@@ -35,4 +35,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Topic::class);
     }
+
+    /**
+     * 权限认证通用方法
+     * @param $model
+     * @return bool
+     */
+    public function inAuthorOf($model)
+    {
+        return $this->id === $model->user_id;
+    }
 }
