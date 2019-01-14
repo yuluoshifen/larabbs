@@ -37,6 +37,15 @@ class User extends Authenticatable
     }
 
     /**
+     * 用户与回复关联（一对多）
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
+
+    /**
      * 权限认证通用方法
      * @param $model
      * @return bool

@@ -17,6 +17,15 @@ class Topic extends Model
     }
 
     /**
+     * 话题和回复一对多关系
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
+
+    /**
      * 话题和用户一对一关系
      */
     public function user()

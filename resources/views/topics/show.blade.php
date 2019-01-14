@@ -56,12 +56,21 @@
                                 {{ csrf_field() }}
                                 {{ method_field('delete') }}
 
-                                <button type="submit" class="btn btn-default btn-xs pull-left" style="margin-left: 6px;">
+                                <button type="submit" class="btn btn-default btn-xs pull-left"
+                                        style="margin-left: 6px;">
                                     <i class="glyphicon glyphicon-trash"></i> 删除
                                 </button>
                             </form>
                         </div>
                     @endcan
+                </div>
+            </div>
+
+            {{--用户回复列表--}}
+            <div class="panel panel-default topic-reply">
+                <div class="panel-body">
+                    @include('topics._reply_box',['topic' => $topic])
+                    @include('topics._reply_list',['replies' => $topic->replies()->with('user')->get()])
                 </div>
             </div>
         </div>
