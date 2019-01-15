@@ -9,7 +9,7 @@
             
             <div class="infos">
                 <div class="media-heading">
-                    <a href="{{ route('users.show',[$reply->user_id]) }}" title="{{ $reply->user->name }}">$reply->user->name</a>
+                    <a href="{{ route('users.show',[$reply->user_id]) }}" title="{{ $reply->user->name }}">{{ $reply->user->name }}</a>
                 </div>
                 <span> · </span>
                 <span class="meta" title="{{ $reply->created_at }}">{{ $reply->created_at->diffForHumans() }}</span>
