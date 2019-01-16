@@ -26,4 +26,9 @@ class ReplyObserver
         //$reply->user : 话题回复人
         $reply->topic->user->notify(new TopicReplied($reply));
     }
+
+    public function deleted(Reply $reply)
+    {
+        $reply->topic->decrement('reply_count', 1);
+    }
 }
